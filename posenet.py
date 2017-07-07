@@ -4,7 +4,7 @@ from keras.layers import Input, Dense, Convolution2D
 from keras.layers import MaxPooling2D, AveragePooling2D
 from keras.layers import ZeroPadding2D, Dropout, Flatten
 from keras.layers import merge, Reshape, Activation, BatchNormalization
-from keras.utils.np_utils import convert_kernel
+from keras.utils.conv_utils import convert_kernel
 from keras import backend as K
 from keras.models import Model
 import tensorflow as tf
