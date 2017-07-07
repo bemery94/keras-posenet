@@ -6,7 +6,7 @@ import random
 import math
 import cv2
 
-directory = 'path-to/KingsCollege/'
+directory = '/home/brendan/projects/posenet_keras/KingsCollege/'
 dataset_train = 'dataset_train.txt'
 dataset_test = 'dataset_test.txt'
 
