@@ -6,9 +6,9 @@ import random
 import math
 import cv2
 
-directory = '/home/brendan/projects/posenet_keras/KingsCollege/'
-dataset_train = 'dataset_train.txt'
-dataset_test = 'dataset_test.txt'
+directory = '/home/emery/keras-posenet/data/fxpal_dataset/'
+dataset_train = 'deserialised_pickle_files/FX_Pose_Regression_Database_train.txt'
+dataset_test = 'deserialised_pickle_files/FX_Pose_Regression_Database_valid.txt'
 
 class datasource(object):
 	def __init__(self, images, poses):
