@@ -7,7 +7,7 @@ from keras.optimizers import Adam
 if __name__ == "__main__":
     # Test model
     model = posenet.create_posenet()
-    model.load_weights('trained_weights.h5')
+    model.load_weights('weights/fxpal_dataset_weights.h5')
     adam = Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0, clipvalue=2.0)
     model.compile(optimizer=adam, loss={'cls1_fc_pose_xyz': posenet.euc_loss1x, 'cls1_fc_pose_wpqr': posenet.euc_loss1q,
                                         'cls2_fc_pose_xyz': posenet.euc_loss2x, 'cls2_fc_pose_wpqr': posenet.euc_loss2q,
