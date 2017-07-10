@@ -2,6 +2,8 @@ import math
 import helper
 import posenet
 import numpy as np
+from matplotlib import pyplot as plt
+
 from keras.optimizers import Adam
 
 if __name__ == "__main__":
@@ -23,6 +25,12 @@ if __name__ == "__main__":
     valsx = testPredict[4]
     valsq = testPredict[5]
 
+    pose_x_vec = np.empty([len(dataset_test.images),1])
+    pose_y_vec = np.empty([len(dataset_test.images),1])
+    pred_pose_x_vec = np.empty([len(dataset_test.images),1])
+    pred_pose_y_vec = np.empty([len(dataset_test.images),1])
+    time_vec = []
+
     # Get results... :/
     results = np.zeros((len(dataset_test.images),2))
     for i in range(len(dataset_test.images)):
@@ -36,6 +44,13 @@ if __name__ == "__main__":
         pose_x = np.squeeze(pose_x)
         predicted_q = np.squeeze(predicted_q)
         predicted_x = np.squeeze(predicted_x)
+        
+        pose_x_vec[i] = pose_x[0]
+        pose_y_vec[i] = pose_x[1]
+        pred_pose_x_vec[i] = predicted_x[0]
+        pred_pose_y_vec[i] = predicted_x[1]
+
+        time_vec.append(i)
 
         #Compute Individual Sample Error
         q1 = pose_q / np.linalg.norm(pose_q)
@@ -47,3 +62,15 @@ if __name__ == "__main__":
         print 'Iteration:  ', i, '  Error XYZ (m):  ', error_x, '  Error Q (degrees):  ', theta
     median_result = np.median(results,axis=0)
     print('Median error ', median_result[0], 'm  and ', median_result[1], 'degrees.')
+    
+    # plt.plot(pose_x_vec, pose_y_vec, 'bx', pred_pose_x_vec, pred_pose_y_vec, 'rx')
+    fig = plt.figure()
+    ax1 = plt.scatter(pose_x_vec, pose_y_vec, marker="^", c=time_vec)#, pred_pose_x_vec, pred_pose_y_vec, c=time_vec)
+    ax2 = plt.scatter(pred_pose_x_vec, pred_pose_y_vec, c=time_vec, cmap='gray', marker='x')
+    fig.suptitle('Predicted Pose vs Ground Truth Pose')
+    plt.xlabel('x (m)')
+    plt.ylabel('y (m)')
+
+    plt.legend((ax1, ax2), ('Ground truth pose', 'Predicted pose'), loc=2)
+
+    plt.show()
