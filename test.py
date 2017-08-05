@@ -63,10 +63,9 @@ if __name__ == "__main__":
     median_result = np.median(results,axis=0)
     print('Median error ', median_result[0], 'm  and ', median_result[1], 'degrees.')
     
-    # plt.plot(pose_x_vec, pose_y_vec, 'bx', pred_pose_x_vec, pred_pose_y_vec, 'rx')
     fig = plt.figure()
-    ax1 = plt.scatter(pose_x_vec, pose_y_vec, marker="^", c=time_vec)#, pred_pose_x_vec, pred_pose_y_vec, c=time_vec)
-    ax2 = plt.scatter(pred_pose_x_vec, pred_pose_y_vec, c=time_vec, cmap='gray', marker='x')
+    ax1 = plt.scatter(pose_x_vec, pose_y_vec, marker="^", c=time_vec)
+    ax2 = plt.scatter(pred_pose_x_vec, pred_pose_y_vec, c=time_vec, marker='x')
     fig.suptitle('Predicted Pose vs Ground Truth Pose')
     plt.xlabel('x (m)')
     plt.ylabel('y (m)')
