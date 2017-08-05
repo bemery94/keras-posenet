@@ -6,7 +6,7 @@
  * Ported v1 Keras code into v2 Keras. The new posenet architecture is structurally the same as the original, however the training results of the v1 and v2 implementations are different using the default parameters. Tuning the hyperparameters can lead to comparable results. 
  * Added matplot of predicted v ground truth pose estimation. This is automatically plotted when test.py is run.
 
-
+## Introduction
 As described in the ICCV 2015 paper **PoseNet: A Convolutional Network for Real-Time 6-DOF Camera Relocalization** Alex Kendall, Matthew Grimes and Roberto Cipolla [http://mi.eng.cam.ac.uk/projects/relocalisation/]
 
 Note that this requires the TensorFlow backend for Keras, however, only minor modifications to the model as well as the helper.py file would be required in order to use the Theano backend. If someone would like assistance with this, simply open an issue. 
