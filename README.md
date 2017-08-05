@@ -1,5 +1,11 @@
 # Keras-PoseNet
-**This is an implementation for Keras of the [PoseNet architecture](http://mi.eng.cam.ac.uk/projects/relocalisation/)**
+**This is a an implementation in Keras v2 of the [PoseNet architecture](http://mi.eng.cam.ac.uk/projects/relocalisation/). This code is based off Kent Sommer's implementation in v1 Keras of [PoseNet](https://github.com/kentsommer/keras-posenet) **
+
+## Contributions
+
+ * Ported v1 Keras code into v2 Keras. The new posenet architecture is structurally the same as the original, however the training results of the v1 and v2 implementations are different using the default parameters. Tuning the hyperparameters can lead to comparable results. 
+ * Added matplot of predicted v ground truth pose estimation. This is automatically plotted when test.py is run.
+
 
 As described in the ICCV 2015 paper **PoseNet: A Convolutional Network for Real-Time 6-DOF Camera Relocalization** Alex Kendall, Matthew Grimes and Roberto Cipolla [http://mi.eng.cam.ac.uk/projects/relocalisation/]
 
