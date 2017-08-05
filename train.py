@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     model.fit(X_train, [y_train_x, y_train_q, y_train_x, y_train_q, y_train_x, y_train_q],
           batch_size=batch_size,
-          nb_epoch=800,
+          epochs=800,
           validation_data=(X_test, [y_test_x, y_test_q, y_test_x, y_test_q, y_test_x, y_test_q]),
           callbacks=[checkpointer])
 
