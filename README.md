@@ -1,5 +1,5 @@
 # Keras-PoseNet
-**This is a an implementation in Keras v2 of the [PoseNet architecture](http://mi.eng.cam.ac.uk/projects/relocalisation/). This code is based off Kent Sommer's implementation in v1 Keras of [PoseNet](https://github.com/kentsommer/keras-posenet) **
+**This is a an implementation in Keras v2 of the [PoseNet architecture](http://mi.eng.cam.ac.uk/projects/relocalisation/). This code is based off Kent Sommer's implementation in v1 Keras of [PoseNet](https://github.com/kentsommer/keras-posenet)**
 
 ## Contributions
 
